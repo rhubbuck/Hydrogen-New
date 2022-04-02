@@ -9,6 +9,8 @@ import gql from 'graphql-tag';
 
 import Layout from '../components/Layout.server';
 import FeaturedCollection from '../components/FeaturedCollection';
+import FeaturedCollectionTwo from '../components/FeaturedCollectionTwo';
+import FeaturedCollectionThree from '../components/FeaturedCollectionThree';
 import ProductCard from '../components/ProductCard';
 import Welcome from '../components/Welcome.server';
 import '../custom.css';
@@ -27,6 +29,8 @@ export default function Index({country = {isoCode: 'US'}}) {
         </Suspense>
         <Suspense fallback={<BoxFallback />}>
           <FeaturedCollectionBox country={country} />
+          <FeaturedCollectionBoxTwo country={country} />
+          <FeaturedCollectionBoxThree country={country} />
         </Suspense>
       </div>
     </Layout>
@@ -126,6 +130,38 @@ function FeaturedCollectionBox({country}) {
     collections && collections.length > 1 ? collections[1] : collections[0];
 
   return <FeaturedCollection collection={featuredCollection} />;
+}
+
+function FeaturedCollectionBoxTwo({country}) {
+  const {data} = useShopQuery({
+    query: QUERY,
+    variables: {
+      country: country.isoCode,
+    },
+    preload: true,
+  });
+
+  const collections = data ? flattenConnection(data.collections) : [];
+  const featuredCollectionTwo =
+    collections && collections.length > 1 ? collections[0] : collections[0];
+
+  return <FeaturedCollectionTwo collection={featuredCollectionTwo} />;
+}
+
+function FeaturedCollectionBoxThree({country}) {
+  const {data} = useShopQuery({
+    query: QUERY,
+    variables: {
+      country: country.isoCode,
+    },
+    preload: true,
+  });
+
+  const collections = data ? flattenConnection(data.collections) : [];
+  const featuredCollectionTwo =
+    collections && collections.length > 1 ? collections[0] : collections[0];
+
+  return <FeaturedCollectionThree collection={featuredCollectionTwo} />;
 }
 
 function GradientBackground() {
