@@ -1,5 +1,5 @@
 import {Image, Link} from '@shopify/hydrogen';
-
+import '../custom.css';
 /**
  * A shared component that defines a single featured collection to display on a storefront
  */
@@ -16,7 +16,7 @@ export default function FeaturedCollection({collection}) {
         <p className="text-lg text-gray-500 mb-6">{collection.description}</p>
         <Link
           to={`/collections/${collection.handle}`}
-          className="inline-block bg-gray-900 text-white text-lg font-medium rounded-md py-4 px-16 uppercase"
+          className="inline-block button-text text-white text-lg font-medium rounded-md py-4 px-16 uppercase"
         >
           Shop Collection
         </Link>

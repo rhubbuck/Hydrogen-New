@@ -14,10 +14,18 @@ import FeaturedCollectionThree from '../components/FeaturedCollectionThree';
 import ProductCard from '../components/ProductCard';
 import Welcome from '../components/Welcome.server';
 import ProductList from '../components/ProductList';
+import LoadMore from '../components/LoadMore.client';
 import '../custom.css';
 import {Suspense} from 'react';
 
-export default function Index({country = {isoCode: 'US'}}) {
+export default function Index({first = 6, country = {isoCode: 'US'}}) {
+  const {data} = useShopQuery({
+    query: QUERYTWO,
+    variables: {
+      first,
+    },
+  });
+  const products = flattenConnection(data.products);
 
   return (
     <div className="mt-36">
@@ -58,7 +66,10 @@ export default function Index({country = {isoCode: 'US'}}) {
       <div className="relative mb-12">
         <Welcome />
         <Suspense fallback={<BoxFallback />}>
-          <FeaturedProductsBox country={country} />
+        <LoadMore current={first}>
+        <ProductList products={products} />
+      </LoadMore>
+          {/* <FeaturedProductsBox country={country} /> */}
         </Suspense>
         <Suspense fallback={<BoxFallback />}>
           <FeaturedCollectionBox country={country} />
@@ -107,7 +118,7 @@ function FeaturedProductsBox({country}) {
   });
 
   const collections = data ? flattenConnection(data.collections) : [];
-  const featuredProductsCollection = collections[0];
+  const featuredProductsCollection = collections[3];
   const featuredProducts = featuredProductsCollection
     ? flattenConnection(featuredProductsCollection.products)
     : null;
@@ -129,7 +140,7 @@ function FeaturedProductsBox({country}) {
               </Link>
             </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
             {featuredProducts.map((product) => (
               <div key={product.id}>
                 <ProductCard product={product} />
@@ -263,7 +274,7 @@ const SEO_QUERY = gql`
 
 const QUERY = gql`
   query indexContent($country: CountryCode) @inContext(country: $country) {
-    collections(first: 2) {
+    collections(first: 4) {
       edges {
         node {
           handle
@@ -276,7 +287,7 @@ const QUERY = gql`
             width
             height
           }
-          products(first: 3) {
+          products(first: 6) {
             edges {
               node {
                 handle
@@ -314,3 +325,73 @@ const QUERY = gql`
     }
   }
 `;
+// Define the GraphQL query.
+const QUERYTWO = gql`
+  query HomeQuery(
+    $first: Int!
+  ) {
+    products(first: $first) {
+      edges {
+        node {
+          handle
+          id
+          media(first: 10) {
+            edges {
+              node {
+                ... on MediaImage {
+                  mediaContentType
+                  image {
+                    id
+                    url
+                    altText
+                    width
+                    height
+                  }
+                }
+              }
+            }
+          }
+          priceRange {
+            maxVariantPrice {
+              currencyCode
+              amount
+            }
+            minVariantPrice {
+              currencyCode
+              amount
+            }
+          }
+          title
+          variants(first: 250) {
+            edges {
+              node {
+                id
+                title
+                availableForSale
+                image {
+                  id
+                  url
+                  altText
+                  width
+                  height
+                }
+                priceV2 {
+                  currencyCode
+                  amount
+                }
+                compareAtPriceV2 {
+                  currencyCode
+                  amount
+                }
+                selectedOptions {
+                  name
+                  value
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
