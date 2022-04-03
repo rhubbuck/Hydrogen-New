@@ -45,7 +45,19 @@ export default function Layout({children, hero}) {
           <Cart />
         </Suspense>
         <main role="main" id="mainContent" className="relative bg-gray-50">
-          <p className="hero-background"></p>
+          <div className="hero-background">
+            <h1 className="text-6xl text-white font-sans pt-36 tracking-wider text-center">
+              Underground Skate Co.
+            </h1>
+            <p className="text-white text-2xl pt-2 text-center font-sans tracking-wider">
+              Live your lifestyle
+            </p>
+            <div className="flex items-center justify-center pt-4">
+              <button className="mx-auto text-white border p-2 rounded-sm content-center hover:bg-white hover:text-sky-500">
+                Shop Now
+              </button>
+            </div>
+          </div>
           {hero}
           <div className="mx-auto max-w-7xl p-4 md:py-5 md:px-8">
             <Suspense fallback={null}>{children}</Suspense>
