@@ -12,6 +12,21 @@
   background-position-y: 30%;
 }
 
+.main-content {
+  /* padding-top: 80vh; */
+}
+
+.welcome-title {
+  font-size: 4.3rem;
+  color: rgb(236, 77, 164);
+  font-weight: 600;
+}
+
+.welcome-subtext {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
 @media only screen and (max-width: 600px) {
   .hero-background {
     background-position-x: 30%;

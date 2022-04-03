@@ -23,7 +23,7 @@ export default function Header({collections, storeName}) {
   }, [isCartOpen]);
 
   return (
-    <header className="h-20 lg:h-32" role="banner">
+    <header className="h-20 lg:h-32 absolute top-0" role="banner">
       <div
         className={`fixed z-20 h-20 lg:h-36 w-full border-b shadow border-gray-200 px-6 md:px-8 md:py-6 lg:pt-8 lg:pb-0 mx-auto bg-white ${
           isMobileNavOpen ? '' : 'bg-opacity-95'

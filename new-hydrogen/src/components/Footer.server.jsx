@@ -13,7 +13,7 @@ export default function Footer({collection, product}) {
             <ul className="mt-8 space-y-4">
               <li className="text-sm font-medium text-gray-600 hover:text-gray-900">
                 <a
-                  href="https://github.com/Shopify/hydrogen/discussions"
+                  href="/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center"
@@ -32,7 +32,7 @@ export default function Footer({collection, product}) {
               </li>
               <li className="text-sm font-medium text-gray-600 hover:text-gray-900">
                 <a
-                  href="https://discord.gg/ppSbThrFaS"
+                  href="/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center"
@@ -58,7 +58,7 @@ export default function Footer({collection, product}) {
                 <Link to="/">Home</Link>
               </li>
               <li className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
-                <Link to={`/products/${product?.handle}`}>Products</Link>
+                <Link to={`/collections/all`}>Products</Link>
               </li>
               <li className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
                 <Link to={`/collections/${collection?.handle}`}>About</Link>

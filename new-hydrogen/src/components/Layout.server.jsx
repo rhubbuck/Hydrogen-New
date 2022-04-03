@@ -3,6 +3,7 @@ import {
   flattenConnection,
   LocalizationProvider,
   CacheHours,
+  Link,
 } from '@shopify/hydrogen';
 import gql from 'graphql-tag';
 
@@ -44,8 +45,8 @@ export default function Layout({children, hero}) {
           <Header collections={collections} storeName={storeName} />
           <Cart />
         </Suspense>
-        <main role="main" id="mainContent" className="relative bg-gray-50">
-          <div className="hero-background">
+        <main role="main" id="mainContent" className="relative bg-gray-50 mx-auto p-4 md:px-8 mt-32 max-w-7xl">
+          {/* <div className="hero-background">
             <h1 className="text-6xl text-white font-sans pt-36 tracking-wider text-center">
               Underground Skate Co.
             </h1>
@@ -53,13 +54,15 @@ export default function Layout({children, hero}) {
               Live your lifestyle
             </p>
             <div className="flex items-center justify-center pt-4">
-              <button className="mx-auto text-white border p-2 rounded-sm content-center hover:bg-white hover:text-sky-500">
-                Shop Now
-              </button>
+              <Link to={`/collections/all`}>
+                <button className="mx-auto text-white border p-2 rounded-sm content-center hover:bg-white hover:text-sky-500">
+                  Shop Now
+                </button>
+              </Link>
             </div>
-          </div>
+          </div> */}
           {hero}
-          <div className="mx-auto max-w-7xl p-4 md:py-5 md:px-8">
+          <div className="mx-auto md:pb-5 main-content">
             <Suspense fallback={null}>{children}</Suspense>
           </div>
         </main>

@@ -134,8 +134,9 @@ function TemplateLinks() {
  */
 export default function Welcome() {
   return (
-    <div className="text-gray-900 rounded-[40px] my-16 px-4 xl:px-12 bg-gradient-to-b from-white -mx-4 xl:-mx-12">
-    testing text for intro section
+    <div className="text-gray-900 rounded-[40px] px-4 xl:px-12 bg-gradient-to-b from-white -mx-4 xl:-mx-12">
+    <h3 className="welcome-title text-center tracking-wide pb-2">Eastcoast born and bred</h3>
+    <h4 className="welcome-subtext text-center pt-2 mb-32">Embrace your passion and stay true to yourself</h4>
       {/* <div className='hero-background'></div> */}
       {/* <div className="text-center mb-16">
         <h1 className="font-extrabold mb-4 text-5xl md:text-7xl">
