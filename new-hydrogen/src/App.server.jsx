@@ -6,6 +6,7 @@ import DefaultSeo from './components/DefaultSeo.server';
 import NotFound from './components/NotFound.server';
 import LoadingFallback from './components/LoadingFallback';
 import CartProvider from './components/CartProvider.client';
+import About from './components/About.server';
 
 function App({routes}) {
   return (
@@ -15,6 +16,7 @@ function App({routes}) {
           <DefaultSeo />
           <Router>
             <FileRoutes routes={routes} />
+            <Route path="/about" page={<About />} />
             <Route path="*" page={<NotFound />} />
           </Router>
         </CartProvider>

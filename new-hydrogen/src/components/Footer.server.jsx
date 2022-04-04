@@ -61,7 +61,7 @@ export default function Footer({collection, product}) {
                 <Link to={`/collections/all`}>Products</Link>
               </li>
               <li className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
-                <Link to={`/collections/${collection?.handle}`}>About</Link>
+                <Link to={`/about`}>About</Link>
               </li>
               {/* <li className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
                 <Link to="/404">404</Link>

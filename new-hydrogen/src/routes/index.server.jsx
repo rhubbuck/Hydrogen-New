@@ -30,7 +30,7 @@ export default function Index({first = 6, country = {isoCode: 'US'}}) {
   return (
     <div className="hero-margin">
     <div className="hero-background">
-      <h1 className="md:text-6xl text-4xl text-white font-sans pt-36 tracking-wider text-center">
+      <h1 className="md:text-6xl text-4xl text-white font-sans md:pt-36 pt-52 tracking-wider text-center">
           Underground Skate Co.
         </h1>
         <p className="text-white md:text-2xl text-xl pt-2 text-center font-sans tracking-wider">
