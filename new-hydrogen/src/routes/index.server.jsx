@@ -28,23 +28,23 @@ export default function Index({first = 6, country = {isoCode: 'US'}}) {
   const products = flattenConnection(data.products);
 
   return (
-    <div className="mt-36">
+    <div className="hero-margin">
     <div className="hero-background">
-            <h1 className="text-6xl text-white font-sans pt-36 tracking-wider text-center">
-              Underground Skate Co.
-            </h1>
-            <p className="text-white text-2xl pt-2 text-center font-sans tracking-wider">
-              Live your lifestyle
-            </p>
-            <div className="flex items-center justify-center pt-4">
-              <Link to={`/collections/all`}>
-                <button className="mx-auto text-white border p-2 rounded-sm content-center hover:bg-white hover:text-sky-500">
-                  Shop Now
-                </button>
-              </Link>
-            </div>
-          </div>
-    <Layout hero={<GradientBackground />}>
+      <h1 className="md:text-6xl text-4xl text-white font-sans pt-36 tracking-wider text-center">
+          Underground Skate Co.
+        </h1>
+        <p className="text-white md:text-2xl text-xl pt-2 text-center font-sans tracking-wider">
+          Live your lifestyle
+        </p>
+        <div className="flex items-center justify-center pt-4">
+          <Link to={`/collections/all`}>
+            <button className="mx-auto text-white border p-2 rounded-sm content-center hover:bg-white hover:text-sky-500">
+              Shop Now
+            </button>
+          </Link>
+        </div>
+      </div>
+      <Layout hero={<GradientBackground />}>
     {/* <div className="hero-background static top-0 left-0">
             <h1 className="text-6xl text-white font-sans pt-36 tracking-wider text-center">
               Underground Skate Co.

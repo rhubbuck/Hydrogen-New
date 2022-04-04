@@ -68,21 +68,17 @@ export default function Footer({collection, product}) {
               </li> */}
             </ul>
           </div>
-          {/* <div>
-            <h2 className="text-md font-medium uppercase mb-4">Docs</h2>
+          <div>
+            <h2 className="text-md font-medium uppercase mb-4">Contact Us</h2>
             <ul className="mt-8 space-y-4">
               <li className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
-                <a href="https://shopify.dev/custom-storefronts/hydrogen">
-                  Hydrogen overview
-                </a>
+                <p>rhubbuck@gmail.com</p>
               </li>
               <li className="flex items-center text-sm font-medium text-gray-600 hover:text-gray-900">
-                <a href="https://shopify.dev/custom-storefronts/hydrogen/getting-started">
-                  Hydrogen starter template
-                </a>
+                <p>(000) 123-1234</p>
               </li>
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
       {/* <div className="py-6 px-4 md:px-8 bg-gray-50">

@@ -12,8 +12,8 @@
   background-position-y: 30%;
 }
 
-.main-content {
-  /* padding-top: 80vh; */
+.main-margin {
+  margin-top: 8rem;
 }
 
 .welcome-title {
@@ -31,10 +31,30 @@
   background-color: rgb(236, 77, 164);
 }
 
+.hero-margin {
+  margin-top: 9rem;
+}
+
 @media only screen and (max-width: 600px) {
   .hero-background {
     background-position-x: 30%;
     height: 70vh;
     margin-top: 0;
+  }
+
+  .hero-margin {
+    margin-top: 0;
+  }
+
+  .main-margin {
+    margin-top: 4rem;
+  }
+
+  .welcome-title {
+    font-size: 2.8rem;
+  }
+
+  .welcome-subtext {
+    font-size: 1.4rem;
   }
 }

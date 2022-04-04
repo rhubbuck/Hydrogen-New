@@ -45,7 +45,7 @@ export default function Layout({children, hero}) {
           <Header collections={collections} storeName={storeName} />
           <Cart />
         </Suspense>
-        <main role="main" id="mainContent" className="relative bg-gray-50 mx-auto p-4 md:px-8 mt-32 max-w-7xl">
+        <main role="main" id="mainContent" className="relative bg-gray-50 mx-auto p-4 md:px-8 main-margin max-w-7xl">
           {/* <div className="hero-background">
             <h1 className="text-6xl text-white font-sans pt-36 tracking-wider text-center">
               Underground Skate Co.
