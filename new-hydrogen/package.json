@@ -2,6 +2,9 @@
   "name": "new-hydrogen",
   "description": "This the default template for Hydrogen",
   "version": "0.0.0",
+  "engines": {
+    "node": "14.17.5"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
