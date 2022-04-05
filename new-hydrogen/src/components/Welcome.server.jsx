@@ -135,36 +135,8 @@ function TemplateLinks() {
 export default function Welcome() {
   return (
     <div className="text-gray-900 rounded-[40px] px-4 xl:px-12 bg-gradient-to-b from-white -mx-4 xl:-mx-12">
-    <h3 className="welcome-title text-center tracking-wide pb-2">Eastcoast born and bred</h3>
-    <h4 className="welcome-subtext text-center pt-2 mb-32">Embrace your passion and stay true to yourself</h4>
-      {/* <div className='hero-background'></div> */}
-      {/* <div className="text-center mb-16">
-        <h1 className="font-extrabold mb-4 text-5xl md:text-7xl">
-          Hello, Hydrogen
-        </h1>
-        <p className="text-lg mb-8">
-          Welcome to your custom storefront. Let&rsquo;s get building.
-        </p>
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 text-gray-700">
-          <DocsButton
-            url="https://shopify.dev/custom-storefronts/hydrogen"
-            label="Browse Hydrogen documentation"
-          />
-          <DocsButton url="/graphql" label="Open the GraphiQL explorer" />
-          <DocsButton
-            url="https://github.com/Shopify/hydrogen-examples"
-            label="Explore Hydrogen examples"
-          />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-        <Suspense fallback={<BoxFallback />}>
-          <StorefrontInfo />
-        </Suspense>
-        <Suspense fallback={<BoxFallback />}>
-          <TemplateLinks />
-        </Suspense>
-      </div> */}
+      <h3 className="welcome-title text-center tracking-wide pb-2">Eastcoast born and bred</h3>
+      <h4 className="welcome-subtext text-center pt-2 mb-32">Embrace your passion and stay true to yourself</h4>
     </div>
   );
 }

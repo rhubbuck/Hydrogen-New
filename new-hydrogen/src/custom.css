@@ -12,6 +12,10 @@
   background-position-y: 30%;
 }
 
+.bag-image {
+  background-image: url(../public/images/bags.jpg);
+}
+
 .main-margin {
   margin-top: 8rem;
 }
