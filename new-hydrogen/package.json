@@ -3,7 +3,7 @@
   "description": "This the default template for Hydrogen",
   "version": "0.0.0",
   "engines": {
-    "node": "14.17.5"
+    "node": "16.14.2"
   },
   "license": "MIT",
   "private": true,
